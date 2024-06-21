@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivid</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.jpg">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+            <img src="logo.jpg" alt="offline" width="50" height="50" style="border-radius: 50%;">
+          </a>
+        <a class="navbar-brand" href="index.html">Vivid</a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="sidebar">
+                    <h4>Add Component</h4>
+                    <ul>
+                        <li><button class="btn btn-link" onclick="addComponent('button')">Button</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('input')">Input</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('div')">Div</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('card')">Card</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('navbar')">Navbar</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('ul')">Unordered List</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('ol')">Ordered List</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('li')">List Item</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('p')">Paragraph Text</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('h1')">Heading 1</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('h2')">Heading Level 2</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('h3')">Heading Level 3</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('h4')">Heading Level 4</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('h5')">Heading Level 5</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('h6')">Heading Level 6</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('span')">Span</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('a')">Anchor</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('img')">Image</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('table')">Table</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4>Change Styling</h4>
+                <div id="styling-properties">
+                    <label for="bg-color">Background Color:</label>
+                    <input type="color" id="bg-color" class="form-control" onchange="changeStyle('backgroundColor', this.value)">
+                    <label for="font-size">Font Size:</label>
+                    <input type="number" id="font-size" class="form-control" onchange="changeStyle('fontSize', this.value + 'px')">
+                    <label for="padding">Padding:</label>
+                    <input type="number" id="padding" class="form-control" onchange="changeStyle('padding', this.value + 'px')">
+                    <label for="margin">Margin:</label>
+                    <input type="number" id="margin" class="form-control" onchange="changeStyle('margin', this.value + 'px')">
+                    <label for="border-radius">Border Radius:</label>
+                    <input type="number" id="border-radius" class="form-control" onchange="changeStyle('borderRadius', this.value + 'px')">
+                    <label for="box-shadow">Box Shadow:</label>
+                    <input type="text" id="box-shadow" class="form-control" onchange="changeStyle('boxShadow', this.value)">
+                    <label for="text-color">Text Color:</label>
+                    <input type="color" id="text-color" class="form-control" onchange="changeStyle('color', this.value)">
+                    <label for="font-family">Font Family:</label>
+                    <input type="text" id="font-family" class="form-control" onchange="changeStyle('fontFamily', this.value)">
+                    <label for="placeholder-text">Placeholder (for input):</label>
+                    <input type="text" id="placeholder-text" class="form-control" onchange="changePlaceholder(this.value)">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4>Code</h4>
+                <textarea id="code" class="form-control" rows="10" onchange="updatePreview()"></textarea>
+                <button class="btn btn-primary mt-2" onclick="copyCode()">Copy Code</button>
+                <button class="btn btn-danger mt-2" onclick="deleteSelectedElement()">Delete Component</button>
+            </div>
+            <div class="col-md-4">
+                <h4>Preview</h4>
+                <div id="preview"></div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
