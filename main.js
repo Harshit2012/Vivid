@@ -67,13 +67,13 @@ function addComponent(type) {
             break;
         case 'li':
             element = document.createElement('li');
-            element.innerText = 'List Item';
             element.className = 'list-group-item';
+            element.innerText = 'List Item';
             break;
         case 'p':
             element = document.createElement('p');
             element.innerText = 'Paragraph Text';
-            element.className = 'custom-paragraph';
+            element.className = 'paragraph-text';
             break;
         case 'h1':
             element = document.createElement('h1');
@@ -168,9 +168,37 @@ function changeStyle(property, value) {
     }
 }
 
+function changeBootstrapClass(prefix, value) {
+    if (selectedElement) {
+        const classesToRemove = [];
+        selectedElement.classList.forEach(cls => {
+            if (cls.startsWith(prefix)) {
+                classesToRemove.push(cls);
+            }
+        });
+        classesToRemove.forEach(cls => {
+            selectedElement.classList.remove(cls);
+        });
+        if (value) {
+            selectedElement.classList.add(`${prefix}-${value}`);
+        }
+        updateCode();
+    }
+}
+
+function changeTransform(transformType, value) {
+    if (selectedElement) {
+        const currentTransform = selectedElement.style.transform || '';
+        const newTransform = currentTransform.replace(new RegExp(`${transformType}\\([^)]+\\)`, 'g'), '').trim();
+        selectedElement.style.transform = `${newTransform} ${transformType}(${value})`.trim();
+        updateCode();
+    }
+}
+
 function changePlaceholder(value) {
     if (selectedElement && selectedElement.tagName === 'INPUT') {
         selectedElement.placeholder = value;
+        updateCode();
     }
 }
 
