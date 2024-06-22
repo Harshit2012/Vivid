@@ -9,75 +9,63 @@
     <link rel="icon" href="logo.jpg">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <a class="navbar-brand" href="/">
             <img src="logo.jpg" alt="offline" width="50" height="50" style="border-radius: 50%;">
           </a>
-        <a class="navbar-brand" href="index.html">Vivid</a>
+        <a class="navbar-brand" href="/">Vivid</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="making.html">Get Started</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="sidebar shadow">
-                    <h4>Add Component</h4>
-                    <ul>
-                        <li><button class="btn btn-link" onclick="addComponent('button')">Button</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('input')">Input</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('div')">Div</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('card')">Card</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('navbar')">Navbar</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('ul')">Unordered List</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('ol')">Ordered List</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('li')">List Item</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('p')">Paragraph Text</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('h1')">Heading 1</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('h2')">Heading Level 2</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('h3')">Heading Level 3</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('h4')">Heading Level 4</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('h5')">Heading Level 5</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('h6')">Heading Level 6</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('span')">Span</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('a')">Anchor</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('img')">Image</button></li>
-                        <li><button class="btn btn-link" onclick="addComponent('table')">Table</button></li>
-                    </ul>
+    <div class="container text-center mt-5 shadow">
+        <h1 class="display-4">Welcome to Vivid</h1>
+        <p class="lead">Create and style your website components easily and dynamically</p>
+        <a href="making.html" class="btn btn-primary btn-lg mt-3">Get Started</a>
+    </div>
+    <div class="container mt-5 shadow">
+        <h2 class="text-center">How to use</h2>
+        <p class="text-center">Add components, style components, preview the code and copy code. Want to delete the component? select and delete</p>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <h1 class="text-center">Features</h1>
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Components</h5>
+                        <p class="card-text">Select and add various components to your preview area.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 shadow">
-                <h4>Change Styling</h4>
-                <div id="styling-properties">
-                    <label for="bg-color">Background Color:</label>
-                    <input type="color" id="bg-color" class="form-control" onchange="changeStyle('backgroundColor', this.value)">
-                    <label for="font-size">Font Size:</label>
-                    <input type="number" id="font-size" class="form-control" onchange="changeStyle('fontSize', this.value + 'px')">
-                    <label for="padding">Padding:</label>
-                    <input type="number" id="padding" class="form-control" onchange="changeStyle('padding', this.value + 'px')">
-                    <label for="margin">Margin:</label>
-                    <input type="number" id="margin" class="form-control" onchange="changeStyle('margin', this.value + 'px')">
-                    <label for="border-radius">Border Radius:</label>
-                    <input type="number" id="border-radius" class="form-control" onchange="changeStyle('borderRadius', this.value + 'px')">
-                    <label for="box-shadow">Box Shadow:</label>
-                    <input type="text" id="box-shadow" class="form-control" onchange="changeStyle('boxShadow', this.value)">
-                    <label for="text-color">Text Color:</label>
-                    <input type="color" id="text-color" class="form-control" onchange="changeStyle('color', this.value)">
-                    <label for="font-family">Font Family:</label>
-                    <input type="text" id="font-family" class="form-control" onchange="changeStyle('fontFamily', this.value)">
-                    <label for="placeholder-text">Placeholder (for input):</label>
-                    <input type="text" id="placeholder-text" class="form-control" onchange="changePlaceholder(this.value)">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <h4>Code</h4>
-                <textarea id="code" class="form-control" rows="10" onchange="updatePreview()" readonly></textarea>
-                <button class="btn btn-primary mt-2" onclick="copyCode()">Copy Code</button>
-                <button class="btn btn-danger mt-2" onclick="deleteSelectedElement()">Delete Component</button>
             </div>
             <div class="col-md-4">
-                <h4>Preview</h4>
-                <div id="preview"></div>
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Style Components</h5>
+                        <p class="card-text">Customize the appearance of your components using various styling options.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Preview & Copy</h5>
+                        <p class="card-text">Preview the styled components and copy the code to use in your projects.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
