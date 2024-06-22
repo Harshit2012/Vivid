@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <div class="sidebar shadow">
+                <div class="sidebar">
                     <h4>Add Component</h4>
                     <ul>
                         <li><button class="btn btn-link" onclick="addComponent('button')">Button</button></li>
@@ -43,17 +43,23 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-3 shadow">
+            <div class="col-md-3">
                 <h4>Change Styling</h4>
                 <div id="styling-properties">
                     <label for="bg-color">Background Color:</label>
                     <input type="color" id="bg-color" class="form-control" onchange="changeStyle('backgroundColor', this.value)">
                     <label for="font-size">Font Size:</label>
                     <input type="number" id="font-size" class="form-control" onchange="changeStyle('fontSize', this.value + 'px')">
+                    <label for="margin-top">Margin Top:</label>
+                    <input type="number" id="margin-top" class="form-control" onchange="changeBootstrapClass('mt', this.value)">
+                    <label for="margin-bottom">Margin Bottom:</label>
+                    <input type="number" id="margin-bottom" class="form-control" onchange="changeBootstrapClass('mb', this.value)">
+                    <label for="margin-left">Margin Left:</label>
+                    <input type="number" id="margin-left" class="form-control" onchange="changeBootstrapClass('ml', this.value)">
+                    <label for="margin-right">Margin Right:</label>
+                    <input type="number" id="margin-right" class="form-control" onchange="changeBootstrapClass('mr', this.value)">
                     <label for="padding">Padding:</label>
-                    <input type="number" id="padding" class="form-control" onchange="changeStyle('padding', this.value + 'px')">
-                    <label for="margin">Margin:</label>
-                    <input type="number" id="margin" class="form-control" onchange="changeStyle('margin', this.value + 'px')">
+                    <input type="number" id="padding" class="form-control" onchange="changeBootstrapClass('p', this.value)">
                     <label for="border-radius">Border Radius:</label>
                     <input type="number" id="border-radius" class="form-control" onchange="changeStyle('borderRadius', this.value + 'px')">
                     <label for="box-shadow">Box Shadow:</label>
@@ -64,11 +70,17 @@
                     <input type="text" id="font-family" class="form-control" onchange="changeStyle('fontFamily', this.value)">
                     <label for="placeholder-text">Placeholder (for input):</label>
                     <input type="text" id="placeholder-text" class="form-control" onchange="changePlaceholder(this.value)">
+                    <label for="perspective">Perspective:</label>
+                    <input type="number" id="perspective" class="form-control" onchange="changeStyle('perspective', this.value + 'px')">
+                    <label for="rotate-x">Rotate X:</label>
+                    <input type="number" id="rotate-x" class="form-control" onchange="changeTransform('rotateX', this.value + 'deg')">
+                    <label for="rotate-y">Rotate Y:</label>
+                    <input type="number" id="rotate-y" class="form-control" onchange="changeTransform('rotateY', this.value + 'deg')">
                 </div>
             </div>
             <div class="col-md-3">
                 <h4>Code</h4>
-                <textarea id="code" class="form-control" rows="10" onchange="updatePreview()" readonly></textarea>
+                <textarea id="code" class="form-control" rows="10" onchange="updatePreview()"></textarea>
                 <button class="btn btn-primary mt-2" onclick="copyCode()">Copy Code</button>
                 <button class="btn btn-danger mt-2" onclick="deleteSelectedElement()">Delete Component</button>
             </div>
