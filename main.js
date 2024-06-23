@@ -122,15 +122,29 @@ function addComponent(type) {
             break;
         case 'table':
             element = document.createElement('table');
+            element.className = 'table';
             element.innerHTML = `
-                <tr>
-                    <th>Header 1</th>
-                    <th>Header 2</th>
-                </tr>
-                <tr>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                </tr>`;
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                    </tr>
+                </tbody>`;
+            break;
+        case 'chart':
+            element = document.createElement('div');
+            element.className = 'chart-container';
+            element.innerHTML = `<img src="PlotGraph-Graph (1).png" alt="This is an example chart" class="img-fluid">`;
+            break;
+        case 'pre':
+            element = document.createElement('pre');
+            element.innerText = 'Preformatted Text\nLine 2\nLine 3';
             break;
     }
     element.onclick = () => selectElement(element);
@@ -198,6 +212,50 @@ function changeTransform(transformType, value) {
 function changePlaceholder(value) {
     if (selectedElement && selectedElement.tagName === 'INPUT') {
         selectedElement.placeholder = value;
+        updateCode();
+    }
+}
+
+function updateTable(property, value) {
+    if (selectedElement && selectedElement.tagName === 'TABLE') {
+        const tbody = selectedElement.querySelector('tbody');
+        const thead = selectedElement.querySelector('thead');
+        if (property === 'rows') {
+            const currentRows = tbody.rows.length;
+            const difference = value - currentRows;
+            if (difference > 0) {
+                for (let i = 0; i < difference; i++) {
+                    const row = tbody.insertRow();
+                    for (let j = 0; j < thead.rows[0].cells.length; j++) {
+                        row.insertCell().innerText = `Data ${i + 1},${j + 1}`;
+                    }
+                }
+            } else {
+                for (let i = 0; i < -difference; i++) {
+                    tbody.deleteRow(-1);
+                }
+            }
+        } else if (property === 'cols') {
+            const currentCols = thead.rows[0].cells.length;
+            const difference = value - currentCols;
+            if (difference > 0) {
+                for (let i = 0; i < difference; i++) {
+                    thead.rows[0].insertCell().innerText = `Header ${currentCols + i + 1}`;
+                }
+                for (let i = 0; i < tbody.rows.length; i++) {
+                    for (let j = 0; j < difference; j++) {
+                        tbody.rows[i].insertCell().innerText = `Data ${i + 1},${currentCols + j + 1}`;
+                    }
+                }
+            } else {
+                for (let i = 0; i < -difference; i++) {
+                    for (let j = 0; j < tbody.rows.length; j++) {
+                        tbody.rows[j].deleteCell(-1);
+                    }
+                    thead.rows[0].deleteCell(-1);
+                }
+            }
+        }
         updateCode();
     }
 }
