@@ -62,3 +62,22 @@ h1, h2 {
         transform: scale(1);
     }
 }
+
+.custom-heading, .paragraph-text, .highlighted-text {
+    margin: 10px 0;
+}
+
+.div-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.chart-container img {
+    width: 100%;
+    height: auto;
+}
