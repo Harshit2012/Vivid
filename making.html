@@ -40,6 +40,8 @@
                         <li><button class="btn btn-link" onclick="addComponent('a')">Anchor</button></li>
                         <li><button class="btn btn-link" onclick="addComponent('img')">Image</button></li>
                         <li><button class="btn btn-link" onclick="addComponent('table')">Table</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('chart')">Chart</button></li>
+                        <li><button class="btn btn-link" onclick="addComponent('pre')">Preformatted Text</button></li>
                     </ul>
                 </div>
             </div>
@@ -76,6 +78,10 @@
                     <input type="number" id="rotate-x" class="form-control" onchange="changeTransform('rotateX', this.value + 'deg')">
                     <label for="rotate-y">Rotate Y:</label>
                     <input type="number" id="rotate-y" class="form-control" onchange="changeTransform('rotateY', this.value + 'deg')">
+                    <label for="table-rows">Table Rows:</label>
+                    <input type="number" id="table-rows" class="form-control" onchange="updateTable('rows', this.value)">
+                    <label for="table-cols">Table Columns:</label>
+                    <input type="number" id="table-cols" class="form-control" onchange="updateTable('cols', this.value)">
                 </div>
             </div>
             <div class="col-md-3">
