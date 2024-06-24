@@ -23,6 +23,9 @@ Easily add responsive styling components in your website.
 <code><img width="50" src="https://user-images.githubusercontent.com/25181517/183898054-b3d693d4-dafb-4808-a509-bab54cf5de34.png" alt="Bootstrap" title="Bootstrap"/></code>
 <code><img width="50" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript"/></code>
 
+## Preview
+![Screenshot (71)](https://github.com/Harshit2012/Vivid/assets/105143145/a181872d-15ec-4477-88b8-8f53e2b27817)
+
 ## Contribution
 Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or create a pull request.
 
