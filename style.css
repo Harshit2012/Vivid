@@ -1,6 +1,46 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    transition: background-color 0.9s, color 0.9s;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .navbar {
+    background-color: #f8f9fa;
+}
+
+.light-mode .border {
+    border-color: #ccc;
+}
+
+.dark-mode {
+    background-color: #343a40;
+    color: white;
+}
+
+.dark-mode .navbar {
+    background-color: #495057;
+}
+
+.dark-mode .border {
+    border-color: #666;
+}
+
+.terminal-mode {
+    background-color: black;
+    color: green;
+}
+
+.terminal-mode .navbar {
+    background-color: #222;
+}
+
+.terminal-mode .border {
+    border-color: #444;
 }
 
 .navbar {
