@@ -16,6 +16,7 @@ Easily add responsive styling components in your website.
 - Add, Style and Delete components
 - Preview and Copy the code
 - For giving you responsive styling components, I use bootstrap
+- Change the theme of the page using dropdown in top right in making page.
 
 ## Technologies Used
 <code><img width="50" src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML"/></code>
