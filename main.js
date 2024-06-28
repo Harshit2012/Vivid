@@ -276,3 +276,15 @@ function updateCode() {
 function updatePreview() {
     document.getElementById('preview').innerHTML = document.getElementById('code').value;
 }
+
+function switchMode(mode) {
+    const body = document.body;
+    body.classList.remove('light-mode', 'dark-mode', 'terminal-mode');
+    if (mode === 'light') {
+        body.classList.add('light-mode');
+    } else if (mode === 'dark') {
+        body.classList.add('dark-mode');
+    } else if (mode === 'terminal') {
+        body.classList.add('terminal-mode');
+    }
+}
