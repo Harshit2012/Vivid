@@ -14,7 +14,10 @@
             <img src="logo.jpg" alt="offline" width="50" height="50" style="border-radius: 50%;">
           </a>
         <a class="navbar-brand" href="index.html">Vivid</a>
-         <div class="ml-auto">
+        <button type="button" class="btn btn-primary">
+            Version <span class="badge badge-light">v1.0.4</span>
+        </button>
+        <div class="ml-auto">
             <label for="modeSwitch" class="text-drak">Mode:</label><span class="badge bg-success">New</span>
             <select onchange="switchMode(this.value)" class="form-control">
                 <option value="light">Light</option>
@@ -97,7 +100,6 @@
                 <textarea id="code" class="form-control" rows="10" onchange="updatePreview()"></textarea>
                 <button class="btn btn-primary mt-2" onclick="copyCode()">Copy Code</button>
                 <button class="btn btn-danger mt-2" onclick="deleteSelectedElement()">Delete Component</button>
-            </div>
             <div class="col-md-4">
                 <h4>Preview</h4>
                 <div id="preview"></div>
