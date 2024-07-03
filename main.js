@@ -140,7 +140,7 @@ function addComponent(type) {
         case 'chart':
             element = document.createElement('div');
             element.className = 'chart-container';
-            element.innerHTML = `<img src="PlotGraph-Graph (1).png" alt="This is an example chart" class="img-fluid">`;
+            element.innerHTML = `<img src="chart (1).png" alt="This is an example chart" class="img-fluid">`;
             break;
         case 'pre':
             element = document.createElement('pre');
