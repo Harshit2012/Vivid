@@ -146,6 +146,10 @@ function addComponent(type) {
             element = document.createElement('pre');
             element.innerText = 'Preformatted Text\nLine 2\nLine 3';
             break;
+        case 'spinner':
+            element = document.createElement('div');
+            element.className = 'spinner-border';
+            break;
     }
     element.onclick = () => selectElement(element);
     document.getElementById('preview').appendChild(element);
@@ -279,12 +283,14 @@ function updatePreview() {
 
 function switchMode(mode) {
     const body = document.body;
-    body.classList.remove('light-mode', 'dark-mode', 'terminal-mode');
+    body.classList.remove('light-mode', 'dark-mode', 'terminal-mode', 'night-mode');
     if (mode === 'light') {
         body.classList.add('light-mode');
     } else if (mode === 'dark') {
         body.classList.add('dark-mode');
     } else if (mode === 'terminal') {
         body.classList.add('terminal-mode');
+    } else if(mode == 'night') {
+        body.classList.add('night-mode')
     }
 }
