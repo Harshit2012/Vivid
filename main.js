@@ -1,10 +1,6 @@
 let selectedElement = null;
 const createdElements = [];
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
 function addComponent(type) {
     let element;
     switch (type) {
@@ -144,7 +140,7 @@ function addComponent(type) {
         case 'chart':
             element = document.createElement('div');
             element.className = 'chart-container';
-            element.innerHTML = `<img src="chart (1).png" alt="This is an example chart" class="img-fluid">`;
+            element.innerHTML = `<img src="PlotGraph-Graph (1).png" alt="This is an example chart" class="img-fluid">`;
             break;
         case 'pre':
             element = document.createElement('pre');
@@ -294,7 +290,26 @@ function switchMode(mode) {
         body.classList.add('dark-mode');
     } else if (mode === 'terminal') {
         body.classList.add('terminal-mode');
-    } else if(mode == 'night') {
+    } else if (mode == 'night') {
         body.classList.add('night-mode')
+    }
+}
+
+let previousHighlightedElement = null;
+function navigateToTarget(event) {
+    event.preventDefault();
+    const query = document.getElementById('navbar-search-input').value.trim().toLowerCase();
+    if (previousHighlightedElement) {
+        previousHighlightedElement.classList.remove('highlighted');
+      }
+    if (query) {
+        let targetElement = document.getElementById(query);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            targetElement.classList.add('highlighted');
+            previousHighlightedElement = targetElement;
+        } else {
+            alert('Component not found.');
+        }
     }
 }
