@@ -143,3 +143,9 @@ h2 {
     width: 100%;
     height: auto;
 }
+
+.highlighted {
+    border: 2px dotted #ff5722;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+  }
