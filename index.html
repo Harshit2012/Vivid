@@ -12,13 +12,14 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <a class="navbar-brand" href="/">
             <img src="logo.jpg" alt="offline" width="50" height="50" style="border-radius: 50%;">
-          </a>
+        </a>
         <a class="navbar-brand" href="/">Vivid</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <button type="button" class="btn btn-primary">
-            Version <span class="badge badge-light">v1.0.5</span>
+            Version <span class="badge badge-light">v1.0.7</span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
@@ -34,11 +35,12 @@
     <div class="container text-center mt-5 shadow">
         <h1 class="display-4">Welcome to Vivid</h1>
         <p class="lead">Create and style your website components easily and dynamically</p>
-        <a href="making.html" class="btn btn-primary btn-lg mt-3">Get Started</a>
+        <button href="making.html" class="btn btn-primary btn-lg mt-3" onclick="transport()">Get Started</button>
     </div>
     <div class="container mt-5 shadow">
         <h2 class="text-center">How to use</h2>
-        <p class="text-center">Add components, style components, preview the code and copy code. Want to delete the component? select and delete</p>
+        <p class="text-center">Add components, style components, preview the code and copy code. Want to delete the
+            component? select and delete</p>
         <hr>
         <h1 class="text-center">Features</h1>
         <div class="row mt-4">
@@ -54,7 +56,8 @@
                 <div class="card feature-card">
                     <div class="card-body">
                         <h5 class="card-title">Style Components</h5>
-                        <p class="card-text">Customize the appearance of your components using various styling options.</p>
+                        <p class="card-text">Customize the appearance of your components using various styling options.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -62,7 +65,8 @@
                 <div class="card feature-card">
                     <div class="card-body">
                         <h5 class="card-title">Preview & Copy</h5>
-                        <p class="card-text">Preview the styled components and copy the code to use in your projects.</p>
+                        <p class="card-text">Preview the styled components and copy the code to use in your projects.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -71,6 +75,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+    <script>
+        function transport() {
+            window.location = "making.html";
+        }
+    </script>
 </body>
 </html>
