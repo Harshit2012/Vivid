@@ -301,7 +301,7 @@ function navigateToTarget(event) {
     const query = document.getElementById('navbar-search-input').value.trim().toLowerCase();
     if (previousHighlightedElement) {
         previousHighlightedElement.classList.remove('highlighted');
-      }
+    }
     if (query) {
         let targetElement = document.getElementById(query);
         if (targetElement) {
@@ -312,4 +312,16 @@ function navigateToTarget(event) {
             alert('Component not found.');
         }
     }
+}
+
+function downloadHtml() {
+    alert("Downloaded!");
+    const htmlContent = document.getElementById("code").value;
+    const blob = new Blob([htmlContent], { type: "text/html" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "download.html";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
