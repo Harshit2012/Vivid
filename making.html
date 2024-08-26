@@ -15,7 +15,7 @@
           </a>
         <a class="navbar-brand" href="index.html">Vivid</a>
         <button type="button" class="btn btn-primary">
-            Version <span class="badge badge-light">v1.0.5</span>
+            Version <span class="badge badge-light">v1.0.7</span>
         </button>
         <form class="form-inline my-2 my-lg-0" onsubmit="navigateToTarget(event)">
             <input class="form-control mr-sm-2" type="search" placeholder="Search component you want to add" aria-label="Search" id="navbar-search-input">
@@ -110,6 +110,7 @@
                 <textarea id="code" class="form-control" rows="10" onchange="updatePreview()"></textarea>
                 <button class="btn btn-success mt-2" onclick="copyCode()">Copy Code</button>
                 <button class="btn btn-danger mt-2" onclick="deleteSelectedElement()">Delete Component</button>
+                <button id="downloadHtmlBtn" onclick="downloadHtml()" class="btn btn-primary">Download HTML</button>
             </div>
             <div class="col-md-4">
                 <h4><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
