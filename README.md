@@ -17,6 +17,7 @@ Easily add responsive styling components in your website.
 - Preview and Copy the code
 - For giving you responsive styling components, I use bootstrap
 - Change the theme of the page using dropdown in top right in making page
+- Search the component using input in navbar
 - Download the html code by click on Download button
 
 ## Technologies Used
